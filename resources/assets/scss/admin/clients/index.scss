@@ -1,0 +1,13 @@
+#clients-table {
+  tbody tr.d-none {
+    display: none !important;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+#filter-status {
+  min-width: 180px;
+}

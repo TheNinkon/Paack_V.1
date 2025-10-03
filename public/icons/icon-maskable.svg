@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="PAACK Courier Maskable">
+  <defs>
+    <radialGradient id="courierGradientMask" cx="30%" cy="30%" r="85%">
+      <stop offset="0" stop-color="#5B8DEF" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#0B1220" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#courierGradientMask)" />
+  <path fill="#ffffff" fill-opacity="0.88"
+    d="M156 180h120c45 0 82 35 82 78s-37 78-82 78h-66l-12 66h-64l22-222zm78 108h39c13 0 24-11 24-24s-11-24-24-24h-32l-7 48zm182-108h64l-36 188h-64l36-188zm-63 64h60l-11 52h-36l-13 72h-60l13-72h-36l11-52h62z" />
+</svg>

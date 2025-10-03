@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  #courier-app {
+    background:
+      radial-gradient(circle at 20% -10%, rgba(59, 130, 246, 0.35), transparent 55%),
+      radial-gradient(circle at 80% 120%, rgba(8, 47, 73, 0.4), transparent 60%);
+  }
+}
+
+@layer components {
+  .courier-map {
+    background: radial-gradient(circle at top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 1));
+  }
+
+  .courier-bottom-sheet {
+    position: relative;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 30px 70px rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(16px);
+    max-height: 26rem;
+    overflow: hidden;
+  }
+
+  .courier-bottom-sheet.collapsed {
+    transform: translateY(calc(100% - 4.75rem));
+  }
+
+  .courier-bottom-sheet .sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .courier-bottom-sheet .sheet-body {
+    transition: opacity 0.2s ease;
+    max-height: 18rem;
+    overflow-y: auto;
+  }
+
+  .courier-bottom-sheet.collapsed .sheet-body {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+  }
+
+  .courier-sheet-toggle {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    background: rgba(15, 23, 42, 0.9);
+    color: #cbd5f5;
+    border: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .courier-sheet-toggle:hover {
+    background: rgba(30, 41, 59, 0.95);
+  }
+
+  .courier-bottom-sheet.collapsed .courier-sheet-toggle {
+    transform: translate(-50%, -140%) rotate(180deg);
+  }
+
+  #courier-scanner-panel {
+    @apply backdrop-blur;
+  }
+
+  #courier-scanner-preview.detected {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.45);
+    transition: box-shadow 0.2s ease;
+  }
+}
+
+@layer utilities {
+  .pt-safe-top {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 1.5rem);
+  }
+
+  .pb-safe-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 6rem);
+  }
+}
+
+button:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.courier-bottom-sheet::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.courier-bottom-sheet {
+  scrollbar-width: none;
+}
